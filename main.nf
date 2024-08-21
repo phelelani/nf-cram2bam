@@ -107,8 +107,8 @@ process run_cram2fastq_BQSR {
         samtools fastq -@ ${task.cpus} \
             -T "*" -O \
             -0 ${sample}_amended.fastq.gz \
-            -1 ${sample}_R1.amended.fastq.gz \
-            -2 ${sample}_R2.amended.fastq.gz \
+            -1 ${sample}_R1_amended.fastq.gz \
+            -2 ${sample}_R2_amended.fastq.gz \
             -s ${sample}_amended_singletons.fastq.gz \
             -n
     """

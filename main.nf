@@ -96,7 +96,7 @@ process run_cram2fastq_BQSR {
     
     output:
     tuple val(sample), path("${sample}_R1_amended.fastq.gz"), path("${sample}_R2_amended.fastq.gz"), emit: fastq
-    tuple val(sample), path("${sample}_amended.singletons.fastq.gz"), emit: singletons
+    tuple val(sample), path("${sample}_amended_singletons.fastq.gz"), emit: singletons
     tuple val(sample), path("${sample}_amended.fastq.gz"), emit: other
 
     """

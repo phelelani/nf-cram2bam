@@ -8,7 +8,7 @@ outdir.mkdir()
 
 process run_cram2bam {
     tag { "${input.baseName}" }
-    publishDir "${outdir}", mode: 'copy', overwrite: true
+    publishDir "${outdir}", mode: 'copy', overwrite: false
 
     input:
     path(input)
@@ -66,7 +66,7 @@ process run_sort_cram {
 process run_cram2fastq {
     tag { "${sample}" }
     
-    publishDir "${outdir}", mode: 'copy', overwrite: true
+    publishDir "${outdir}", mode: 'copy', overwrite: false
 
     input:
     tuple val(sample), path(input)
@@ -89,7 +89,7 @@ process run_cram2fastq {
 
 process run_cram2fastq_BQSR {
     tag { "${sample}" }
-    publishDir "${outdir}", mode: 'copy', overwrite: true
+    publishDir "${outdir}", mode: 'copy', overwrite: false
 
     input:
     tuple val(sample), path(input)
